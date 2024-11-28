@@ -1,7 +1,12 @@
 const form = document.querySelector('form');
+const input = document.querySelector('.input');
 
-const replaceImages = () => {
-    document.body.style.background = 'red'
+const replaceImages = (url) => {
+    const images = document.querySelectorAll('img');
+    images.forEach((image) => {
+        image.src = url;
+    });
+
 }
 
 form.addEventListener('submit', async (e) => {
@@ -10,5 +15,6 @@ form.addEventListener('submit', async (e) => {
   chrome.scripting.executeScript({
     target: { tabId: tab.id},
     function: replaceImages,
+    args: [input.value]
     });
 });
