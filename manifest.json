@@ -1,0 +1,10 @@
+{
+    "manifest_version": 3,
+    "name": "Stocco Extension",
+    "description": "Stocco Extension for Google Chrome",
+    "version": "1.0",
+    "permissions": ["activeTab", "scripting"],
+    "action": {
+      "default_popup": "index.html"
+    }
+  }
